@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aspireforge
+  labels:
+    app: aspireforge
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aspireforge
+  template:
+    metadata:
+      labels:
+        app: aspireforge
+    spec:
+      containers:
+        - name: aspireforge
+          image: aspireforge:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8765
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8765
+            initialDelaySeconds: 3
+            periodSeconds: 5

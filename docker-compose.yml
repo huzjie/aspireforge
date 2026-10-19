@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  aspireforge:
+    build: .
+    container_name: aspireforge
+    ports:
+      - "8765:8765"
+    environment:
+      - ASPIREFORGE_CONFIG=/app/configs.example.yaml
+    restart: unless-stopped

@@ -1,0 +1,32 @@
+# aspireforge default configuration
+skill:
+  backend: memory
+  hash: sha256
+  max_skills: 4096
+  similarity_threshold: 0.6
+  embed_dim: 32
+
+coder:
+  model: mock
+  temperature: 0.0
+  max_program_steps: 64
+  prompt_template: default
+
+reflect:
+  max_repairs: 3
+  failure_classes: [collision, timing_error, grasp_failure, goal_not_reached, precondition_violation, none]
+
+robot:
+  n_tasks: 128
+  horizon: 64
+  seed: 42
+  primitive_set: [move_to, grasp, place, push, rotate, open, close, wait]
+
+bench:
+  n_seen: 32
+  n_unseen: 32
+  episodes: 8
+  long_horizon_primitives: 5
+
+skill_library_size: 90
+covered_tasks: 150

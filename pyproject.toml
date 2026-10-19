@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aspireforge"
+version = "1.0.0"
+description = "Robot skill library + failure-reflection self-improving coding agent (zero-dependency reference)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "aspireforge" }]
+
+[tool.setuptools]
+packages = ["aspireforge"]
